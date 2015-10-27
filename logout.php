@@ -1,12 +1,5 @@
-<?
-	session_start(); //iniciamos a sessÃ£o que foi aberta
-	session_destroy(); //pei!!! destruimos a sessÃ£o ;)
-	session_unset(); //limpamos as variaveis globais das sessÃµes
-
-	echo "<script>alert('Logout Realizado com Sucesso!');top.location.href='index.php';</script>"; /*aqui vocÃª pode por alguma coisa falando que ele saiu ou fazer como eu, coloquei redirecionar para uma certa pÃ¡gina*/
-
-
-
-
-
+<?php
+	session_start(); // Inicia a sessão
+	session_destroy(); // Destrói a sessão limpando todos os valores salvos
+	header("Location: index.php"); exit; // Redireciona o visitante
 ?>
