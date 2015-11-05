@@ -8,7 +8,7 @@
 	<hr>
 	<div class="row">
 	<div class="col-xs-12 col-sm-4">
-		<a href="#" class="thumbnail" onclick="window.open('cadastroCliente.php', 'Cadastro de Clientes', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=600');">
+		<a href="#" class="thumbnail" onclick="window.open('cadastros/cadastroCliente.php', 'Cadastro de Clientes', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=800, HEIGHT=600');">
 			<center>
 				<img src="img/icons/addCliente.jpg" alt="Clientes" width="90" height="90">
 				<h3>Cadastro</h3>

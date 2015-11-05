@@ -16,7 +16,7 @@
   </div><!-- fim do caontainer -->
 </div><!-- fim do jumbotron -->
 <div class="container" id="formulario">
-	<form class="form-horizontal" role="form" method="post" action="cadastros/inserirClientes.php">
+	<form class="form-horizontal" role="form" method="post" action="#">
 	<fieldset>
 		<legend>Dados Pessoais</legend>
 		<div class="form-group">
@@ -32,19 +32,19 @@
 		</div>
 		<div class="form-group">
 			<label class="control-label">Data Nascimento</label>
-			<input class="form-control" type="text" id="dataNasc" name="dataNasc" required>
+			<input class="form-control" type="date" id="dataNasc" name="dataNasc" required>
 		</div>
 		<div class="form-group">
 			<label class="control-label">CPF</label>
-			<input class="form-control" type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+			<input class="form-control" type="text" id="cpf" name="cpf" placeholder="000.000.000-00" onkeypress="mascara(this, '###.###.###-##')" maxlength="14" required>
 		</div>
 		<div class="form-group">
 			<label class="control-label">Telefone Principal</label>
-			<input class="form-control" type="text" id="telPrinc" name="telPrinc" required>
+			<input class="form-control" type="tel" id="telPrinc" name="telPrinc" onkeypress="mascara(this, '## # ####-####')" maxlength="14" required>
 		</div>
 		<div class="form-group">
 			<label class="control-label">Telefone Contato</label>
-			<input class="form-control" type="text" id="telcont" name="telcont">
+			<input class="form-control" type="tel" id="telcont" name="telcont" onkeypress="mascara(this, '## # ####-####')" maxlength="14">
 		</div>
 	</fieldset>
 	<fieldset>
@@ -74,23 +74,23 @@
 		<legend>Dados Endereço</legend>
 		<div class="form-group">
 			<label class="control-label">Rua</label>
-			<input class="form-control" type="text" id="rua" name="rua" required>
+			<input class="form-control" type="text" required>
 		</div>
 		<div class="form-group">
 			<label class="control-label">Numero</label>
-			<input class="form-control" type="text" id="numero" name="numero" required>
+			<input class="form-control" type="text" required>
 		</div>
 		<div class="form-group">
 			<label class="control-label">Bairro</label>
-			<input class="form-control" type="text" id="bairro" name="bairro" required>
+			<input class="form-control" type="text" required>
 		</div>
 		<div class="form-group">
 			<label class="control-label">CEP</label>
-			<input class="form-control" type="text" id="cep" name="cep" >
+			<input class="form-control" type="text" onkeypress="mascara(this, '#####-###')" maxlength="9">
 		</div>
 		<div class="form-group">
 			<label class="control-label">Municipio</label>
-			<input class="form-control" type="text" id="municipio" name="municipio" required>
+			<input class="form-control" type="text" required>
 		</div>
 		<div class="form-group">
 			<label class="control-label">UF</label>
@@ -135,5 +135,32 @@
 </form>
 
 </div><!-- fim da div formulario -->
+
+ <script language="JavaScript">
+ /*
+ A função Mascara tera como valores no argumento os dados inseridos no input (ou no evento onkeypress)
+ onkeypress="mascara(this, '## ####-####')"
+ onkeypress = chama uma função quando uma tecla é pressionada, no exemplo acima, chama a função mascara e define os valores do argumento na função
+ O primeiro valor é o this, é o Apontador/Indicador da Mascara, o '## ####-####' é o modelo / formato da mascara
+ no exemplo acima o # indica os números, e o - (hifen) o caracter que será inserido entre os números, ou seja, no exemplo acima o telefone ficara assim: 11-4000-3562
+ para o celular de são paulo o modelo deverá ser assim: '## #####-####' [11 98563-1254]
+ para o RG '##.###.###.# [40.123.456.7]
+ para o CPF '###.###.###.##' [789.456.123.10]
+ Ou seja esta mascara tem como objetivo inserir o hifen ou espaço automáticamente quando o usuário inserir o número do celular, cpf, rg, etc 
+
+ lembrando que o hifen ou qualquer outro caracter é contado tambem, como: 11-4561-6543 temos 10 números e 2 hifens, por isso o valor de maxlength será 12
+ <input type="text" name="telefone" onkeypress="mascara(this, '## ####-####')" maxlength="12">
+ neste código não é possivel inserir () ou [], apenas . (ponto), - (hifén) ou espaço
+ */
+
+ function mascara(t, mask){
+ var i = t.value.length;
+ var saida = mask.substring(1,0);
+ var texto = mask.substring(i)
+ if (texto.substring(0,1) != saida){
+ t.value += texto.substring(0,1);
+ }
+ }
+ </script>
 </body>
 </html>
