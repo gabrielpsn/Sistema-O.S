@@ -1,0 +1,39 @@
+#menuCliente{
+	background-color: #ddd;
+	-moz-border-radius: 7px;
+   -webkit-border-radius: 7px;
+   -webkit-box-shadow: 7px 7px 5px 1px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    7px 7px 5px 1px rgba(50, 50, 50, 0.75);
+	box-shadow:         7px 7px 5px 1px rgba(50, 50, 50, 0.75);
+
+}
+
+#menufuncionario{
+	background-color: #ddd;
+	-moz-border-radius: 7px;
+   -webkit-border-radius: 7px;
+   -webkit-box-shadow: 7px 7px 5px 1px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    7px 7px 5px 1px rgba(50, 50, 50, 0.75);
+	box-shadow:         7px 7px 5px 1px rgba(50, 50, 50, 0.75);
+
+}
+
+#menuFornecedor{
+	background-color: #ddd;
+	-moz-border-radius: 7px;
+   -webkit-border-radius: 7px;
+   -webkit-box-shadow: 7px 7px 5px 1px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    7px 7px 5px 1px rgba(50, 50, 50, 0.75);
+	box-shadow:         7px 7px 5px 1px rgba(50, 50, 50, 0.75);
+
+}
+
+h1{
+	font-size: 25px; 
+    background:#3366FF;
+    padding:20px;
+    color:#fff; 
+    text-shadow: 0 0 20px #fff, 0 -10px 20px #fff, 
+	0 10px 20px #fff, -20px 0 40px #fff, 
+	20px 0 40px #fff;
+}

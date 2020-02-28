@@ -44,38 +44,48 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
 				  <div class="container">
     <div class="row" id="menu">
         <div class="hidden-xs col-sm-1">
-            <a href="restrito.php?pagina=1" class="thumbnail">
-                <img src="img/icons/clientes.jpg" alt="Clientes"><br>
+            <a href="restrito.php?pagina=1" class="thumbnail" title="Acesse o Menu de Clientes">
+                <img src="img/icons/clientes.png" alt="Clientes" width="90" height="90" >
             </a>
         </div>
         <div class="hidden-xs col-sm-1">
-            <a href="restrito.php?pagina=2" class="thumbnail">
+            <a href="restrito.php?pagina=2" class="thumbnail" title="Acesse o Menu de Funcionarios">
                 <img src="img/icons/funcionarios.jpg" alt="Funcinarios" >
             </a>
         </div>
         <div class="hidden-xs col-sm-1" >
-            <a href="restrito.php?pagina=3" class="thumbnail">
+            <a href="restrito.php?pagina=3" class="thumbnail" title="Acesse o Menu de Fornecedores">
                 <img src="img/icons/fornecedores.jpg" alt="Fornecedores" >
             </a>
         </div>
+        <div class="hidden-xs col-sm-1" >
+            <a href="restrito.php?pagina=7" class="thumbnail" title="Acesse o Menu de Estoque">
+                <img src="img/icons/produto.png" alt="Produtos" >
+            </a>
+        </div>
         <div class="hidden-xs col-sm-1">
-            <a href="restrito.php?pagina=4" class="thumbnail">
+            <a href="restrito.php?pagina=4" class="thumbnail" title="Acesse o Menu de Veiculos">
                 <img src="img/icons/veiculo.jpg" alt="Veiculos">
             </a>
         </div>
         <div class="hidden-xs col-sm-1">
-            <a href="restrito.php?pagina=5" class="thumbnail">
+            <a href="restrito.php?pagina=5" class="thumbnail" title="Acesse o Menu de O.S">
                 <img src="img/icons/ordem.jpg" alt="Ordem serviço">
             </a>
         </div>
         <div class="hidden-xs col-sm-1">
-            <a href="restrito.php?pagina=6" class="thumbnail">
+            <a href="restrito.php?pagina=6" class="thumbnail" title="Acesse o Menu de Relatorios">
                 <img src="img/icons/relatorios.jpg" alt="Relatorios" >
             </a>
         </div>
         <div class="hidden-xs col-sm-1">
+            <a href="restrito.php?pagina=8" class="thumbnail" title="Acesse o Menu de Suporte">
+                <img src="img/icons/suporte.png" alt="Suporte" width="90" height="90" >
+            </a>
+        </div>
+        <div class="hidden-xs col-sm-1">
             <a href="logout.php" class="thumbnail">
-                <img src="img/icons/sair_porta.png" alt="Sair">
+                <img src="img/icons/sair_porta.png" alt="Sair" title="Sair do Sistema">
             </a>
         </div>
     </div>
@@ -91,15 +101,15 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
 				$pagina = $_GET['pagina'];
 				switch ($pagina) {
    				 case 1:
-        			echo" Cliente "; 					
+        			include "menuClientes.php"; 					
        			 break;
 
     			case 2:
-       				 echo "Funcionarios ";
+       				 include "menuFuncionario.php"; 
        			 break;
 
    				 case 3:
-       			 	echo "fornecedor ";
+       			 	 include "menuFornecedor.php"; 
        			 break;
 
        			 case 4:
@@ -113,6 +123,10 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] < $nivel_necess
    				 case 6:
        			 	echo "relatorios ";
        			 break;
+
+          case 7:
+              echo "Estoque ";
+          break;
    				 
    				 default:
      				  echo "i is not equal to 0, 1 or 2";
